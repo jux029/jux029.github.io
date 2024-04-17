@@ -522,8 +522,7 @@ Each histogram represents the distribution of 1000 sample averages, calculated b
 - Histogram at N=500: With a sample size of 500, the distribution of the sample averages becomes tighter and more symmetric around the true difference, showing less uncertainty and further confirmation of the Central Limit Theorem.  
 - Histogram at N=1000: At this sample size, the histogram clearly shows a normal distribution around the true difference, and zero is not in the tail of the distribution. The average differences are centering more closely around the true difference.  
 
-
-### Conclusion 
+## Conclusion 
 Throughout this analysis, we’ve engaged with a dataset that details the effects of matched donations on charitable giving, replicating and interpreting the findings of the study.
 
 The original study’s conclusion that match offers increase the likelihood of donating holds true. However, the effectiveness of different match sizes appears to have a ceiling effect, where increasing the match ratio above 1:1 offers no additional advantage. The amount donated seems to be independent of the match offer, indicating that once individuals decide to donate, their generosity is not swayed by the leverage of their donation being matched.
