@@ -523,5 +523,11 @@ Each histogram represents the distribution of 1000 sample averages, calculated b
 - Histogram at N=1000: At this sample size, the histogram clearly shows a normal distribution around the true difference, and zero is not in the tail of the distribution. The average differences are centering more closely around the true difference.  
 
 
+### Conclusion 
+Throughout this analysis, we’ve engaged with a dataset that details the effects of matched donations on charitable giving, replicating and interpreting the findings of the study.
+
+The original study’s conclusion that match offers increase the likelihood of donating holds true. However, the effectiveness of different match sizes appears to have a ceiling effect, where increasing the match ratio above 1:1 offers no additional advantage. The amount donated seems to be independent of the match offer, indicating that once individuals decide to donate, their generosity is not swayed by the leverage of their donation being matched.
+
+Our exploration using simulation provided a practical demonstration of statistical theorems and reinforced the original findings. The importance of such matching schemes in fundraising efforts is clear—they are effective at increasing participation rates in charitable giving, but the complexity of the matching offer does not significantly impact the donation behavior among those who decide to give.
 
 
