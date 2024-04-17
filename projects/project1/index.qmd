@@ -1,0 +1,20 @@
+---
+title: Homework 1
+subtitle: p-values
+author: Rainie Xie
+date: today
+toc: true
+---
+
+# Header 1  
+
+## Sub-Header
+
+### Header 3 
+
+- text  
+
+command+shift+i
+```{python}
+
+```

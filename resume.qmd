@@ -1,0 +1,6 @@
+---
+title: "My Resume"
+---
+
+{{< pdf files/JXie_resume_intn4.pdf width=100% height=800 >}}
+

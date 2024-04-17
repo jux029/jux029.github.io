@@ -1,0 +1,16 @@
+---
+title: "Rainie Xie Project Blog"
+image: "files/profile_pic.jpg"
+
+about: 
+    template: solana
+    links: 
+        - icon: envelope
+            href:mailto:jux029@ucsd.edu
+        - icon: linkedin
+            href:http://www.linkedin.com/in/rainiexjy
+
+---
+
+Welcome to my website... 
+

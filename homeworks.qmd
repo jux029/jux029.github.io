@@ -1,0 +1,9 @@
+---
+title: "Marketing Analytics Assignment"
+listing:
+  contents: homeworks
+  type: grid
+  sort: "date desc"
+  categories: false
+
+---
