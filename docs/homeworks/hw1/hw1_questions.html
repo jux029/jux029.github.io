@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Rainie Xie">
-<meta name="dcterms.date" content="2024-04-16">
+<meta name="dcterms.date" content="2024-04-27">
 
 <title>Rainie website - A Replication of Karlan and List (2007)</title>
 <style>
@@ -177,8 +177,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#law-of-large-numbers" id="toc-law-of-large-numbers" class="nav-link" data-scroll-target="#law-of-large-numbers">Law of Large Numbers</a></li>
   <li><a href="#central-limit-theorem" id="toc-central-limit-theorem" class="nav-link" data-scroll-target="#central-limit-theorem">Central Limit Theorem</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 16, 2024</p>
+      <p class="date">April 27, 2024</p>
     </div>
   </div>
   
@@ -247,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <section id="description" class="level3">
 <h3 class="anchored" data-anchor-id="description">Description</h3>
-<div id="bf09b348" class="cell" data-execution_count="1">
+<div id="03bb6c81" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data </span></span>
@@ -797,7 +797,7 @@ Variable Definitions
 <section id="balance-test" class="level3">
 <h3 class="anchored" data-anchor-id="balance-test">Balance Test</h3>
 <p>As an ad hoc test of the randomization mechanism, I provide a series of tests that compare aspects of the treatment and control groups to assess whether they are statistically significantly different from one another.</p>
-<div id="5bc1b9aa" class="cell" data-execution_count="2">
+<div id="674d152e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -827,8 +827,8 @@ Variable Definitions
 Dep. Variable:                   mrm2   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                   0.01428
-Date:                Tue, 16 Apr 2024   Prob (F-statistic):              0.905
-Time:                        23:21:09   Log-Likelihood:            -1.9585e+05
+Date:                Sat, 27 Apr 2024   Prob (F-statistic):              0.905
+Time:                        22:19:27   Log-Likelihood:            -1.9585e+05
 No. Observations:               50082   AIC:                         3.917e+05
 Df Residuals:                   50080   BIC:                         3.917e+05
 Df Model:                           1                                         
@@ -867,7 +867,7 @@ More Tests for the Randomization Mechanism
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="aa3742d8" class="cell" data-execution_count="3">
+<div id="7445e8a9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's conduct similar balance tests for other variables. </span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform a t-test for the 'female' variable</span></span>
@@ -912,8 +912,8 @@ More Tests for the Randomization Mechanism
 Dep. Variable:                 female   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                     3.092
-Date:                Tue, 16 Apr 2024   Prob (F-statistic):             0.0787
-Time:                        23:21:09   Log-Likelihood:                -30148.
+Date:                Sat, 27 Apr 2024   Prob (F-statistic):             0.0787
+Time:                        22:19:27   Log-Likelihood:                -30148.
 No. Observations:               48972   AIC:                         6.030e+04
 Df Residuals:                   48970   BIC:                         6.032e+04
 Df Model:                           1                                         
@@ -938,8 +938,8 @@ TtestResult(statistic=0.944145044786662, pvalue=0.34510008823759086, df=50081.0)
 Dep. Variable:                    hpa   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                    0.8924
-Date:                Tue, 16 Apr 2024   Prob (F-statistic):              0.345
-Time:                        23:21:10   Log-Likelihood:            -2.8468e+05
+Date:                Sat, 27 Apr 2024   Prob (F-statistic):              0.345
+Time:                        22:19:27   Log-Likelihood:            -2.8468e+05
 No. Observations:               50083   AIC:                         5.694e+05
 Df Residuals:                   50081   BIC:                         5.694e+05
 Df Model:                           1                                         
@@ -973,7 +973,7 @@ Notes:
 <p>First, I analyze whether matched donations lead to an increased response rate of making a donation.</p>
 <section id="barplot-with-proportion-of-people-who-donated." class="level4">
 <h4 class="anchored" data-anchor-id="barplot-with-proportion-of-people-who-donated.">Barplot with proportion of people who donated.</h4>
-<div id="64a4033e" class="cell" data-execution_count="4">
+<div id="483bed4a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the proportion of people who donated in both treatment and control groups</span></span>
@@ -1008,7 +1008,7 @@ Notes:
 </section>
 <section id="t-test-linear-regression-on-charitable-contribution" class="level3">
 <h3 class="anchored" data-anchor-id="t-test-linear-regression-on-charitable-contribution">T-test &amp; Linear Regression on Charitable Contribution</h3>
-<div id="06196d90" class="cell" data-execution_count="5">
+<div id="242a229b" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># T-test for 'gave' variable</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>treatment_gave <span class="op">=</span> data[data[<span class="st">'treatment'</span>] <span class="op">==</span> <span class="dv">1</span>][<span class="st">'gave'</span>].dropna()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>control_gave <span class="op">=</span> data[data[<span class="st">'treatment'</span>] <span class="op">==</span> <span class="dv">0</span>][<span class="st">'gave'</span>].dropna()</span>
@@ -1031,8 +1031,8 @@ Notes:
 Dep. Variable:                   gave   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                     9.618
-Date:                Tue, 16 Apr 2024   Prob (F-statistic):            0.00193
-Time:                        23:21:11   Log-Likelihood:                 26630.
+Date:                Sat, 27 Apr 2024   Prob (F-statistic):            0.00193
+Time:                        22:19:28   Log-Likelihood:                 26630.
 No. Observations:               50083   AIC:                        -5.326e+04
 Df Residuals:                   50081   BIC:                        -5.324e+04
 Df Model:                           1                                         
@@ -1061,7 +1061,7 @@ Notes:
 </section>
 <section id="probit-model-on-charitable-contribution" class="level3">
 <h3 class="anchored" data-anchor-id="probit-model-on-charitable-contribution">Probit Model on Charitable Contribution</h3>
-<div id="a5be471d" class="cell" data-execution_count="6">
+<div id="d161d92d" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.discrete.discrete_model <span class="im">import</span> Probit</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparing the data for the Probit model</span></span>
@@ -1082,8 +1082,8 @@ Notes:
 Dep. Variable:                   gave   No. Observations:                50083
 Model:                         Probit   Df Residuals:                    50081
 Method:                           MLE   Df Model:                            1
-Date:                Tue, 16 Apr 2024   Pseudo R-squ.:               0.0009783
-Time:                        23:21:12   Log-Likelihood:                -5030.5
+Date:                Sat, 27 Apr 2024   Pseudo R-squ.:               0.0009783
+Time:                        22:19:28   Log-Likelihood:                -5030.5
 converged:                       True   LL-Null:                       -5035.4
 Covariance Type:            nonrobust   LLR p-value:                  0.001696
 ==============================================================================
@@ -1101,7 +1101,7 @@ treatment      0.0868      0.028      3.113      0.002       0.032       0.141
 <section id="differences-between-match-rates" class="level3">
 <h3 class="anchored" data-anchor-id="differences-between-match-rates">Differences between Match Rates</h3>
 <p>Next, I assess the effectiveness of different sizes of matched donations on the response rate. :::: {.callout-note collapse=“true”} ### T-tests between different match ratios</p>
-<div id="b66752e8" class="cell" data-execution_count="7">
+<div id="ac0a606f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset the data based on match ratio</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>data_1to1 <span class="op">=</span> data[data[<span class="st">'ratio'</span>] <span class="op">==</span> <span class="dv">1</span>][<span class="st">'gave'</span>]</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>data_2to1 <span class="op">=</span> data[data[<span class="st">'ratio2'</span>] <span class="op">==</span> <span class="dv">1</span>][<span class="st">'gave'</span>]</span>
@@ -1136,7 +1136,7 @@ Regression on different match ratios
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="108dfde3" class="cell" data-execution_count="8">
+<div id="5ce4d71b" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the variable 'ratio1' </span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'ratio1'</span>] <span class="op">=</span> (data[<span class="st">'ratio'</span>] <span class="op">==</span> <span class="dv">1</span>).astype(<span class="bu">int</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1154,8 +1154,8 @@ Regression on different match ratios
 Dep. Variable:                   gave   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                     3.665
-Date:                Tue, 16 Apr 2024   Prob (F-statistic):             0.0118
-Time:                        23:21:13   Log-Likelihood:                 26630.
+Date:                Sat, 27 Apr 2024   Prob (F-statistic):             0.0118
+Time:                        22:19:28   Log-Likelihood:                 26630.
 No. Observations:               50083   AIC:                        -5.325e+04
 Df Residuals:                   50079   BIC:                        -5.322e+04
 Df Model:                           3                                         
@@ -1195,7 +1195,7 @@ Response Rate Difference
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="7ef99ba8" class="cell" data-execution_count="9">
+<div id="6de035db" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating response rates directly from the data</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>mean_response_1to1 <span class="op">=</span> data[data[<span class="st">'ratio1'</span>] <span class="op">==</span> <span class="dv">1</span>][<span class="st">'gave'</span>].mean()</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>mean_response_2to1 <span class="op">=</span> data[data[<span class="st">'ratio2'</span>] <span class="op">==</span> <span class="dv">1</span>][<span class="st">'gave'</span>].mean()</span>
@@ -1249,7 +1249,7 @@ These differences are quite small, indicating that while there is a slight incre
 <p>In this subsection, I analyze the effect of the size of matched donation on the size of the charitable contribution.</p>
 <section id="t-test-on-donation-amount" class="level4">
 <h4 class="anchored" data-anchor-id="t-test-on-donation-amount">T-test on Donation Amount</h4>
-<div id="39907968" class="cell" data-execution_count="10">
+<div id="95ddf5e8" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Separate the donation amounts by treatment status</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>treatment_amounts <span class="op">=</span> data[data[<span class="st">'treatment'</span>] <span class="op">==</span> <span class="dv">1</span>][<span class="st">'amount'</span>]</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>control_amounts <span class="op">=</span> data[data[<span class="st">'treatment'</span>] <span class="op">==</span> <span class="dv">0</span>][<span class="st">'amount'</span>]</span>
@@ -1269,7 +1269,7 @@ Effect Size: The positive t-statistic indicates that the treatment group’s mea
 </section>
 <section id="regression-on-donation-amount-with-people-who-donated" class="level4">
 <h4 class="anchored" data-anchor-id="regression-on-donation-amount-with-people-who-donated">Regression on Donation Amount with people who donated</h4>
-<div id="20fc464c" class="cell" data-execution_count="11">
+<div id="6526ce4d" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the dataset for only those individuals who made a donation</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>donor_data <span class="op">=</span> data[data[<span class="st">'gave'</span>] <span class="op">==</span> <span class="dv">1</span>]</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1288,8 +1288,8 @@ Effect Size: The positive t-statistic indicates that the treatment group’s mea
 Dep. Variable:                 amount   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                 -0.001
 Method:                 Least Squares   F-statistic:                    0.3374
-Date:                Tue, 16 Apr 2024   Prob (F-statistic):              0.561
-Time:                        23:21:15   Log-Likelihood:                -5326.8
+Date:                Sat, 27 Apr 2024   Prob (F-statistic):              0.561
+Time:                        22:19:28   Log-Likelihood:                -5326.8
 No. Observations:                1034   AIC:                         1.066e+04
 Df Residuals:                    1032   BIC:                         1.067e+04
 Df Model:                           1                                         
@@ -1324,7 +1324,7 @@ Histogram of Donation Amount for those who donated
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="568fc1fd" class="cell" data-execution_count="12">
+<div id="137505f7" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Separate the donation amounts by treatment status</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>treatment_donations <span class="op">=</span> donor_data[donor_data[<span class="st">'treatment'</span>] <span class="op">==</span> <span class="dv">1</span>][<span class="st">'amount'</span>]</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>control_donations <span class="op">=</span> donor_data[donor_data[<span class="st">'treatment'</span>] <span class="op">==</span> <span class="dv">0</span>][<span class="st">'amount'</span>]</span>
@@ -1383,7 +1383,7 @@ Histogram of Donation Amount for those who donated
 <p>Further suppose that the true distribution of respondents who do get a charitable donation match of any size is Bernoulli with probability p=0.022 that a donation is made.</p>
 <section id="law-of-large-numbers" class="level3">
 <h3 class="anchored" data-anchor-id="law-of-large-numbers">Law of Large Numbers</h3>
-<div id="eaed6316" class="cell" data-execution_count="13">
+<div id="0854b56e" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters for the simulation</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>true_p_control <span class="op">=</span> <span class="fl">0.018</span>  <span class="co"># The true probability for the control group</span></span>
@@ -1428,7 +1428,7 @@ After initial volatility due to the small sample size, the blue line starts to s
 </section>
 <section id="central-limit-theorem" class="level3">
 <h3 class="anchored" data-anchor-id="central-limit-theorem">Central Limit Theorem</h3>
-<div id="840f92b5" class="cell" data-execution_count="14">
+<div id="6cbc45a6" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters for the simulation</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>n_draws_list <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">200</span>, <span class="dv">500</span>, <span class="dv">1000</span>]</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>n_replications <span class="op">=</span> <span class="dv">1000</span></span>
@@ -1478,14 +1478,14 @@ After initial volatility due to the small sample size, the blue line starts to s
 <li>Histogram at N=1000: At this sample size, the histogram clearly shows a normal distribution around the true difference, and zero is not in the tail of the distribution. The average differences are centering more closely around the true difference.</li>
 </ul>
 </section>
-<section id="conclusion" class="level3">
-<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>Throughout this analysis, we’ve engaged with a dataset that details the effects of matched donations on charitable giving, replicating and interpreting the findings of the study.</p>
 <p>The original study’s conclusion that match offers increase the likelihood of donating holds true. However, the effectiveness of different match sizes appears to have a ceiling effect, where increasing the match ratio above 1:1 offers no additional advantage. The amount donated seems to be independent of the match offer, indicating that once individuals decide to donate, their generosity is not swayed by the leverage of their donation being matched.</p>
 <p>Our exploration using simulation provided a practical demonstration of statistical theorems and reinforced the original findings. The importance of such matching schemes in fundraising efforts is clear—they are effective at increasing participation rates in charitable giving, but the complexity of the matching offer does not significantly impact the donation behavior among those who decide to give.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
