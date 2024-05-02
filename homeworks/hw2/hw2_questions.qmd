@@ -354,7 +354,7 @@ abnb['bathrooms'] = abnb.apply(
 We use a similar strategy as above, imputing missing values based on the median or mode within each room type category, as this could reflect the typical values more accurately for different types of listings.
 
 :::: {.callout-note collapse="true"}
-#### similar approach for bedrooms and scores of cleanliness, location, and value 
+### similar approach for bedrooms and scores of cleanliness, location, and value 
 ```{python}
 # Similar approach for bedrooms missing values 
 common_bedrooms_per_room_type = abnb.groupby('room_type')['bedrooms'].agg(lambda x: x.mode()[0])
