@@ -354,7 +354,7 @@ abnb['bathrooms'] = abnb.apply(
 We use a similar strategy as above, imputing missing values based on the median or mode within each room type category, as this could reflect the typical values more accurately for different types of listings.
 
 :::: {.callout-note collapse="true"}
-### similar approach for bedrooms and scores of cleanliness, location, and value 
+### Similar approach for bedrooms and scores of cleanliness, location, and value 
 ```{python}
 # Similar approach for bedrooms missing values 
 common_bedrooms_per_room_type = abnb.groupby('room_type')['bedrooms'].agg(lambda x: x.mode()[0])
@@ -515,17 +515,19 @@ print(poisson_model.summary())
 Model Output Analysis:  
 1. Intercept (const):
 Coefficient: 4.7941. This is the logarithm of the expected count of reviews when all other predictors are zero (base level or baseline scenario).  
-2. Predictors:
-- Price: Coefficient of -0.0002 suggests that as the price increases by one unit, the expected count of reviews decreases slightly, indicating potentially fewer bookings or lesser popularity as prices go up.  
-- Days: Coefficient of 5.02e-05 indicates that listings available for more days have slightly more reviews. This indicates that longer-listed properties tend to accumulate more reviews over time.  
-- Review Scores:
-    - Cleanliness: Higher cleanliness scores positively impact the number of reviews. A one-unit increase in the cleanliness score is associated with about a 10.7% increase in the expected count of reviews, suggesting that cleaner listings receive more reviews.   
-    - Location: -0.2729: Surprisingly, this coefficient is negative, which would imply that better location scores could decrease the number of reviews. This might require further investigation as it's counterintuitive; typically, one would expect better locations to attract more reviews.  
-    - Value: -0.0448: Lower value scores decrease the number of reviews, indicating that guests are less likely to leave a review if they feel the listing does not provide good value.  
-- Room Types:
-    - Private room: Negative coefficient (-0.1307) compared to the baseline (Entire home/apt), suggesting they are less popular or receive fewer bookings.  
-    - Shared room: More significant negative coefficient (-0.4375) indicating even fewer reviews, which might reflect less popularity or lower booking rates.  
-- Instant Bookable: Positive coefficient (0.3538) indicating that listings that can be booked instantly tend to have more reviews, possibly due to ease of booking.  
+
+2. Predictors Analysis
+- **Price**: Coefficient of -0.0002 suggests that as the price increases by one unit, the expected count of reviews decreases slightly, indicating potentially fewer bookings or lesser popularity as prices go up.  
+- **Days**: Coefficient of 5.02e-05 indicates that listings available for more days have slightly more reviews. This indicates that longer-listed properties tend to accumulate more reviews over time.  
+Review Scores
+- **Cleanliness**: Higher cleanliness scores positively impact the number of reviews. A one-unit increase in the cleanliness score is associated with about a 10.7% increase in the expected count of reviews, suggesting that cleaner listings receive more reviews.   
+- **Location**: -0.2729: Surprisingly, this coefficient is negative, which would imply that better location scores could decrease the number of reviews. This might require further investigation as it's counterintuitive; typically, one would expect better locations to attract more reviews.  
+- **Value**: Lower value scores decrease the number of reviews, indicating that guests are less likely to leave a review if they feel the listing does not provide good value.  
+Room Types
+- **Private room**: Negative coefficient (-0.1307) compared to the baseline (Entire home/apt), suggesting they are less popular or receive fewer bookings.  
+- **Shared room**: More significant negative coefficient (-0.4375) indicating even fewer reviews, which might reflect less popularity or lower booking rates.  
+- **Instant Bookable**: Positive coefficient (0.3538) indicating that listings that can be booked instantly tend to have more reviews, possibly due to ease of booking.  
+
 3. Model Fit:  
 Pseudo R-squared (0.8294):  suggests a good fit of the model to the data.
 

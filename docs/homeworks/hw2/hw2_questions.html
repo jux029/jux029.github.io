@@ -249,7 +249,7 @@ window.Quarto = {
 </section>
 <section id="data" class="level3">
 <h3 class="anchored" data-anchor-id="data">Data</h3>
-<div id="c7d1f671" class="cell" data-execution_count="1">
+<div id="f268c231" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load dataset </span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>blueprinty <span class="op">=</span> pd.read_csv(<span class="st">"./blueprinty.csv"</span>)</span>
@@ -338,7 +338,7 @@ window.Quarto = {
 <section id="compare-histograms-and-means-of-number-of-patents-by-customer-status." class="level4">
 <h4 class="anchored" data-anchor-id="compare-histograms-and-means-of-number-of-patents-by-customer-status.">Compare histograms and means of number of patents by customer status.</h4>
 <p>We’ll visualize the distributions and calculate the mean number of patents by customer status.</p>
-<div id="59474c23" class="cell" data-execution_count="2">
+<div id="628e357d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -377,7 +377,7 @@ Mean number of patents for non-customers: 3.6231772831926325</code></pre>
 <section id="compare-regions-and-ages-by-customer-status." class="level4">
 <h4 class="anchored" data-anchor-id="compare-regions-and-ages-by-customer-status.">Compare regions and ages by customer status.</h4>
 <p>We’ll now compare the regions and ages by customer status to see if there are systematic differences in these variables between customers and non-customers. This can help us understand whether any differences in patent numbers might be influenced by these factors.</p>
-<div id="3bdac7c6" class="cell" data-execution_count="3">
+<div id="7dfdc232" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Age comparison by customer status</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span><span class="st">'iscustomer'</span>, y<span class="op">=</span><span class="st">'age'</span>, data<span class="op">=</span>blueprinty)</span>
@@ -448,7 +448,7 @@ Poisson Log-Likelihood Function Python Code
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="455ee261" class="cell" data-execution_count="4">
+<div id="02d8c0bd" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> poisson_log_likelihood(lambda_, Y):</span>
@@ -480,7 +480,7 @@ Poisson Log-Likelihood Function Python Code
 </section>
 <section id="plotting-the-log-likelihood-function" class="level4">
 <h4 class="anchored" data-anchor-id="plotting-the-log-likelihood-function">Plotting the Log-Likelihood Function</h4>
-<div id="17cb5cf5" class="cell" data-execution_count="5">
+<div id="ee69171c" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Range of lambda values from 0.1 to 10</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>lambda_range <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">10</span>, <span class="dv">400</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>log_likelihood_values <span class="op">=</span> [poisson_log_likelihood(lambda_, sample_Y) <span class="cf">for</span> lambda_ <span class="kw">in</span> lambda_range]</span>
@@ -512,7 +512,7 @@ Poisson Log-Likelihood Function Python Code
 </section>
 <section id="maximum-likelihood-estimation" class="level4">
 <h4 class="anchored" data-anchor-id="maximum-likelihood-estimation">Maximum Likelihood Estimation</h4>
-<div id="b2ccdcb0" class="cell" data-execution_count="6">
+<div id="b6b73486" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize_scalar</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.special <span class="im">as</span> sps</span>
@@ -544,7 +544,7 @@ Poisson Log-Likelihood Function Python Code
 <section id="estimation-of-poisson-regression-model" class="level3">
 <h3 class="anchored" data-anchor-id="estimation-of-poisson-regression-model">Estimation of Poisson Regression Model</h3>
 <p>Next, we extend our simple Poisson model to a Poisson Regression Model such that <span class="math inline">\(Y_i = \text{Poisson}(\lambda_i)\)</span> where <span class="math inline">\(\lambda_i = \exp(X_i'\beta)\)</span>. The interpretation is that the success rate of patent awards is not constant across all firms (<span class="math inline">\(\lambda\)</span>) but rather is a function of firm characteristics <span class="math inline">\(X_i\)</span>. Specifically, we will use the covariates age, age squared, region, and whether the firm is a customer of Blueprinty.</p>
-<div id="f7aab806" class="cell" data-execution_count="7">
+<div id="137c864c" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> poisson_regression_log_likelihood(beta, X, Y):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculate the log-likelihood for the Poisson regression model.</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
@@ -573,7 +573,7 @@ MLE for Poisson Regression
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="677038ed" class="cell" data-execution_count="8">
+<div id="93b1326f" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the 'age squared' term to the dataset</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>blueprinty[<span class="st">'age_squared'</span>] <span class="op">=</span> blueprinty[<span class="st">'age'</span>] <span class="op">**</span> <span class="dv">2</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -622,7 +622,7 @@ Estimated coefficients: [ 1.2154394   1.04657567 -1.14095311  0.1181281   0.0986
 </div>
 </div>
 </div>
-<div id="214638c3" class="cell" data-execution_count="9">
+<div id="03a15f06" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate standard errors from the inverse Hessian</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>hessian_inv <span class="op">=</span> reg_result.hess_inv.todense()  <span class="co"># Convert to dense matrix if it's sparse</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>standard_errors <span class="op">=</span> np.sqrt(np.diag(hessian_inv))</span>
@@ -647,7 +647,7 @@ Estimated coefficients: [ 1.2154394   1.04657567 -1.14095311  0.1181281   0.0986
 </div>
 </div>
 <p>Check the results using sm.GLM() function._</p>
-<div id="fb95df73" class="cell" data-execution_count="10">
+<div id="3a0fc0c6" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the GLM Poisson model using statsmodels</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>poisson_glm <span class="op">=</span> sm.GLM(Y, X, family<span class="op">=</span>sm.families.Poisson())</span>
@@ -700,7 +700,7 @@ Estimated coefficients: [ 1.2154394   1.04657567 -1.14095311  0.1181281   0.0986
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">Time:</td>
-<td>20:30:55</td>
+<td>20:45:04</td>
 <td data-quarto-table-cell-role="th">Pearson chi2:</td>
 <td>2.11e+03</td>
 </tr>
@@ -852,7 +852,7 @@ Variable Definitions
 </section>
 <section id="data-preparation" class="level3">
 <h3 class="anchored" data-anchor-id="data-preparation">Data Preparation</h3>
-<div id="f87421e5" class="cell" data-execution_count="11">
+<div id="cd80694d" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>abnb <span class="op">=</span> pd.read_csv(<span class="st">'./airbnb.csv'</span>)</span>
@@ -994,7 +994,7 @@ Variable Definitions
 <section id="handle-missing-values." class="level4">
 <h4 class="anchored" data-anchor-id="handle-missing-values.">Handle missing values.</h4>
 <p>There are missing values in ‘bathrooms’, ‘bedrooms’, ‘review_scores_cleanliness’, ‘review_scores_location’, and ‘review_scores_value’.</p>
-<div id="874817ec" class="cell" data-execution_count="12">
+<div id="649b16de" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>abnb.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>Unnamed: 0                       0
@@ -1014,7 +1014,7 @@ instant_bookable                 0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="d1a2ce40" class="cell" data-execution_count="13">
+<div id="5c2d1be8" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find room type with missing values in bathrooms </span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>abnb[abnb[<span class="st">'bathrooms'</span>].isnull()][<span class="st">'room_type'</span>].value_counts() </span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1031,7 +1031,7 @@ Name: bathrooms, dtype: float64</code></pre>
 </div>
 <p>The most common number of bathrooms for each room type is 1.0, regardless of whether it’s an entire home/apt, a private room, or a shared room.<br>
 Given this uniformity, we can impute the missing bathroom values with 1.0 for all missing entries across different room types.</p>
-<div id="d51feb8e" class="cell" data-execution_count="14">
+<div id="3850aa5e" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Impute missing bathroom values with the most common bathroom count for each room type</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>abnb[<span class="st">'bathrooms'</span>] <span class="op">=</span> abnb.<span class="bu">apply</span>(</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> row: common_bathrooms_per_room_type[row[<span class="st">'room_type'</span>]] <span class="cf">if</span> pd.isnull(row[<span class="st">'bathrooms'</span>]) <span class="cf">else</span> row[<span class="st">'bathrooms'</span>],</span>
@@ -1039,15 +1039,19 @@ Given this uniformity, we can impute the missing bathroom values with 1.0 for al
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We use a similar strategy as above, imputing missing values based on the median or mode within each room type category, as this could reflect the typical values more accurately for different types of listings.</p>
-<section id="similar-approach-for-bedrooms-and-scores-of-cleanliness-location-and-value" class="level5">
-<h5 class="anchored" data-anchor-id="similar-approach-for-bedrooms-and-scores-of-cleanliness-location-and-value">similar approach for bedrooms and scores of cleanliness, location, and value</h5>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="db2dfd09" class="cell" data-execution_count="15">
+<div class="callout-title-container flex-fill">
+Similar approach for bedrooms and scores of cleanliness, location, and value
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="cfad7f67" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Similar approach for bedrooms missing values </span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>common_bedrooms_per_room_type <span class="op">=</span> abnb.groupby(<span class="st">'room_type'</span>)[<span class="st">'bedrooms'</span>].agg(<span class="kw">lambda</span> x: x.mode()[<span class="dv">0</span>])</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1099,11 +1103,10 @@ dtype: int64</code></pre>
 <p>Note: missing values for ‘host_since’ is not handled as ‘days’ for each listing has no missing values, we can use this variable for later analysis since ‘days’ = ‘last_scraped’ - ‘host_since’.</p>
 </section>
 </section>
-</section>
 <section id="data-visualization" class="level3">
 <h3 class="anchored" data-anchor-id="data-visualization">Data visualization</h3>
 <p>Now, let’s create some visualizations to explore the dataset further.</p>
-<div id="88d606e9" class="cell" data-execution_count="16">
+<div id="89f9e513" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a figure for multiple histograms</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">15</span>))</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1144,7 +1147,7 @@ dtype: int64</code></pre>
 <li>Distribution of Days Listed: Similar to the number of reviews, the days listed are also skewed right, with many listings being relatively new and fewer listings having been available for a long time.</li>
 </ol>
 <p>Next, let’s create box plots to examine the distribution of prices and number of reviews across different room types.</p>
-<div id="f5f3aae1" class="cell" data-execution_count="17">
+<div id="bc4e37e4" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a figure for box plots</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">12</span>))</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1176,7 +1179,7 @@ dtype: int64</code></pre>
 <li>Number of Reviews Distribution by Room Type: The number of reviews also varies by room type. Entire homes/apartments and private rooms show a closer range of reviews, with entire homes/apartments slightly higher. Shared rooms generally have fewer reviews, which might indicate less usage or fewer bookings.</li>
 </ol>
 <p>We can also vistualize the prices &amp; number of reviews across different room types.</p>
-<div id="c3ee09b3" class="cell" data-execution_count="18">
+<div id="d126681c" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a figure for histograms of prices and number of reviews across different room types</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">12</span>))</span>
@@ -1209,7 +1212,7 @@ dtype: int64</code></pre>
 <section id="modeling" class="level3">
 <h3 class="anchored" data-anchor-id="modeling">Modeling</h3>
 <p>Now using Poisson regression model to understand the relationship between number of reviews vs.&nbsp;other variables. We will use ‘number_of_reviews’ as the proxy of the number of bookings.</p>
-<div id="525e9f11" class="cell" data-execution_count="19">
+<div id="a6795b28" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert categorical variables to dummy variables</span></span>
@@ -1241,7 +1244,7 @@ Model Family:                 Poisson   Df Model:                            8
 Link Function:                    Log   Scale:                          1.0000
 Method:                          IRLS   Log-Likelihood:            -6.9645e+05
 Date:                Wed, 01 May 2024   Deviance:                   1.2689e+06
-Time:                        20:31:03   Pearson chi2:                 2.03e+06
+Time:                        20:45:11   Pearson chi2:                 2.03e+06
 No. Iterations:                    11   Pseudo R-squ. (CS):             0.8294
 Covariance Type:            nonrobust                                         
 =============================================================================================
@@ -1260,19 +1263,31 @@ instant_bookable_t            0.3538      0.003    123.095      0.000       0.34
 </div>
 </div>
 <p>Model Output Analysis:<br>
-1. Intercept (const): Coefficient: 4.7941. This is the logarithm of the expected count of reviews when all other predictors are zero (base level or baseline scenario).<br>
-2. Predictors: - Price: Coefficient of -0.0002 suggests that as the price increases by one unit, the expected count of reviews decreases slightly, indicating potentially fewer bookings or lesser popularity as prices go up.<br>
-- Days: Coefficient of 5.02e-05 indicates that listings available for more days have slightly more reviews. This indicates that longer-listed properties tend to accumulate more reviews over time.<br>
-- Review Scores:<br>
-- Cleanliness: Higher cleanliness scores positively impact the number of reviews. A one-unit increase in the cleanliness score is associated with about a 10.7% increase in the expected count of reviews, suggesting that cleaner listings receive more reviews.<br>
-- Location: -0.2729: Surprisingly, this coefficient is negative, which would imply that better location scores could decrease the number of reviews. This might require further investigation as it’s counterintuitive; typically, one would expect better locations to attract more reviews.<br>
-- Value: -0.0448: Lower value scores decrease the number of reviews, indicating that guests are less likely to leave a review if they feel the listing does not provide good value.<br>
-- Room Types:<br>
-- Private room: Negative coefficient (-0.1307) compared to the baseline (Entire home/apt), suggesting they are less popular or receive fewer bookings.<br>
-- Shared room: More significant negative coefficient (-0.4375) indicating even fewer reviews, which might reflect less popularity or lower booking rates.<br>
-- Instant Bookable: Positive coefficient (0.3538) indicating that listings that can be booked instantly tend to have more reviews, possibly due to ease of booking.<br>
-3. Model Fit:<br>
-Pseudo R-squared (0.8294): suggests a good fit of the model to the data.</p>
+1. Intercept (const): Coefficient: 4.7941. This is the logarithm of the expected count of reviews when all other predictors are zero (base level or baseline scenario).</p>
+<ol start="2" type="1">
+<li>Predictors Analysis</li>
+</ol>
+<ul>
+<li><strong>Price</strong>: Coefficient of -0.0002 suggests that as the price increases by one unit, the expected count of reviews decreases slightly, indicating potentially fewer bookings or lesser popularity as prices go up.<br>
+</li>
+<li><strong>Days</strong>: Coefficient of 5.02e-05 indicates that listings available for more days have slightly more reviews. This indicates that longer-listed properties tend to accumulate more reviews over time.<br>
+Review Scores</li>
+<li><strong>Cleanliness</strong>: Higher cleanliness scores positively impact the number of reviews. A one-unit increase in the cleanliness score is associated with about a 10.7% increase in the expected count of reviews, suggesting that cleaner listings receive more reviews.<br>
+</li>
+<li><strong>Location</strong>: -0.2729: Surprisingly, this coefficient is negative, which would imply that better location scores could decrease the number of reviews. This might require further investigation as it’s counterintuitive; typically, one would expect better locations to attract more reviews.<br>
+</li>
+<li><strong>Value</strong>: Lower value scores decrease the number of reviews, indicating that guests are less likely to leave a review if they feel the listing does not provide good value.<br>
+Room Types</li>
+<li><strong>Private room</strong>: Negative coefficient (-0.1307) compared to the baseline (Entire home/apt), suggesting they are less popular or receive fewer bookings.<br>
+</li>
+<li><strong>Shared room</strong>: More significant negative coefficient (-0.4375) indicating even fewer reviews, which might reflect less popularity or lower booking rates.<br>
+</li>
+<li><strong>Instant Bookable</strong>: Positive coefficient (0.3538) indicating that listings that can be booked instantly tend to have more reviews, possibly due to ease of booking.</li>
+</ul>
+<ol start="3" type="1">
+<li>Model Fit:<br>
+Pseudo R-squared (0.8294): suggests a good fit of the model to the data.</li>
+</ol>
 <section id="conclusion" class="level4">
 <h4 class="anchored" data-anchor-id="conclusion">Conclusion</h4>
 <p>The model provides insights into factors that influence guest interaction and feedback on Airbnb listings. Notably, pricing strategy, listing cleanliness, and instant bookability appear to significantly impact the number of reviews a listing receives. The negative coefficients for location and value scores may need further exploration or data validation to understand the context better.</p>
