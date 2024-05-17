@@ -212,13 +212,13 @@ We learn...
 2.  **Yogurt Type Coefficients:**
     
     *   **yogurt\_1 (1.4179):**
-        *   This positive coefficient indicates that yogurt brand 1 has a higher preference compared to the baseline (intercept).
+        *   This positive coefficient indicates that yogurt brand 1 has a higher preference compared to the baseline (yogurt 4).
         *   The exponentiated coefficient, `exp(1.4179) ≈ 4.13`, indicates that the odds of choosing yogurt brand 1 are about 4.13 times higher than the baseline choice.
     *   **yogurt\_2 (0.9013):**
-        *   This positive coefficient indicates that yogurt brand 2 also has a higher preference compared to the baseline.
+        *   This positive coefficient indicates that yogurt brand 2 also has a higher preference compared to the yogurt 4.
         *   The exponentiated coefficient, `exp(0.9013) ≈ 2.46`, indicates that the odds of choosing yogurt brand 2 are about 2.46 times higher than the baseline choice.
     *   **yogurt\_3 (-3.1405):**
-        *   This negative coefficient indicates that yogurt brand 3 is less preferred compared to the baseline.
+        *   This negative coefficient indicates that yogurt brand 3 is less preferred compared to the yogurt 4.
         *   The exponentiated coefficient, `exp(-3.1405) ≈ 0.04`, indicates that the odds of choosing yogurt brand 3 are about 0.04 times (or 96% less) than the baseline choice.
 3.  **Price (-31.9761):**
     
