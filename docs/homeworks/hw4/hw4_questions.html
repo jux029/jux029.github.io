@@ -221,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
-<div id="47e07432" class="cell" data-execution_count="1">
+<div id="a727a420" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
@@ -298,7 +298,7 @@ dtype: int64</code></pre>
 <section id="visualization" class="level3">
 <h3 class="anchored" data-anchor-id="visualization">Visualization</h3>
 <p>Distribution of Satisfaction Scores</p>
-<div id="80ebb837" class="cell" data-execution_count="2">
+<div id="d57f0f72" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -324,7 +324,7 @@ dtype: int64</code></pre>
 <section id="pearson-correlation" class="level3">
 <h3 class="anchored" data-anchor-id="pearson-correlation">Pearson Correlation</h3>
 <p>Pearson correlation measures the linear relationship between two variables. It ranges from -1 to 1, where values closer to 1 indicate a strong positive relationship, values closer to -1 indicate a strong negative relationship, and values around 0 indicate no linear relationship.</p>
-<div id="7333720f" class="cell" data-execution_count="3">
+<div id="df302dee" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Feature selection</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>features <span class="op">=</span> [<span class="st">'trust'</span>, <span class="st">'build'</span>, <span class="st">'differs'</span>, <span class="st">'easy'</span>, <span class="st">'appealing'</span>, <span class="st">'rewarding'</span>, <span class="st">'popular'</span>, <span class="st">'service'</span>, <span class="st">'impact'</span>]</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> data[features]</span>
@@ -335,31 +335,31 @@ dtype: int64</code></pre>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>pearson_corr <span class="op">=</span> correlations[<span class="st">'satisfaction'</span>][features]</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize the correlations</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>normalized_corr <span class="op">=</span> (pearson_corr <span class="op">/</span> pearson_corr.<span class="bu">sum</span>()) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>normalized_corr <span class="op">=</span> pearson_corr <span class="op">/</span> pearson_corr.<span class="bu">sum</span>()</span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>normalized_corr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>trust        13.283356
-build         9.968574
-differs       9.600014
-easy         11.064100
-appealing    10.804975
-rewarding    10.107052
-popular       8.905177
-service      13.044017
-impact       13.222734
+<pre><code>trust        0.132834
+build        0.099686
+differs      0.096000
+easy         0.110641
+appealing    0.108050
+rewarding    0.101071
+popular      0.089052
+service      0.130440
+impact       0.132227
 Name: satisfaction, dtype: float64</code></pre>
 </div>
 </div>
 <p>The Pearson correlation coefficients for each feature with respect to customer satisfaction are calculated to understand which features have the strongest linear relationships with satisfaction.</p>
 <ul>
-<li><strong>trust</strong>,<strong>impact</strong> and <strong>service</strong> show relatively strong positive correlations with customer satisfaction, indicating that as these factors increase, so does satisfaction.</li>
+<li><strong>trust</strong>, <strong>impact</strong> and <strong>service</strong> show relatively strong positive correlations with customer satisfaction, indicating that as these factors increase, so does satisfaction.</li>
 <li><strong>popular</strong> and <strong>differs</strong> also have positive correlations but are less strong.</li>
 </ul>
 </section>
 <section id="standardized-regression-coefficients" class="level3">
 <h3 class="anchored" data-anchor-id="standardized-regression-coefficients">Standardized Regression Coefficients</h3>
 <p>Standardized regression coefficients are used in regression analysis to compare the relative importance of different predictors. They are scaled to have a mean of zero and a standard deviation of one, making them comparable across different units of measurement.</p>
-<div id="a0cde01e" class="cell" data-execution_count="4">
+<div id="12877007" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -375,7 +375,7 @@ Name: satisfaction, dtype: float64</code></pre>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract standardized regression coefficients (betas)</span></span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>standardized_coefficients <span class="op">=</span> model.coef_</span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>normalized_coefficients <span class="op">=</span> (np.<span class="bu">abs</span>(standardized_coefficients)<span class="op">/</span>np.<span class="bu">abs</span>(standardized_coefficients).<span class="bu">sum</span>()) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>normalized_coefficients <span class="op">=</span> np.<span class="bu">abs</span>(standardized_coefficients)<span class="op">/</span>np.<span class="bu">abs</span>(standardized_coefficients).<span class="bu">sum</span>()</span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a DataFrame for better visualization</span></span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>coefficients_df <span class="op">=</span> pd.DataFrame({</span>
@@ -403,55 +403,55 @@ Name: satisfaction, dtype: float64</code></pre>
 <td data-quarto-table-cell-role="th">0</td>
 <td>trust</td>
 <td>0.135635</td>
-<td>25.280109</td>
+<td>0.252801</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>build</td>
 <td>0.023411</td>
-<td>4.363461</td>
+<td>0.043635</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>differs</td>
 <td>0.032631</td>
-<td>6.081798</td>
+<td>0.060818</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>easy</td>
 <td>0.025744</td>
-<td>4.798205</td>
+<td>0.047982</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>appealing</td>
 <td>0.039647</td>
-<td>7.389479</td>
+<td>0.073895</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
 <td>rewarding</td>
 <td>0.005937</td>
-<td>1.106526</td>
+<td>0.011065</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">6</td>
 <td>popular</td>
 <td>0.019470</td>
-<td>3.628859</td>
+<td>0.036289</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">7</td>
 <td>service</td>
 <td>0.103573</td>
-<td>19.304269</td>
+<td>0.193043</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">8</td>
 <td>impact</td>
 <td>0.150482</td>
-<td>28.047294</td>
+<td>0.280473</td>
 </tr>
 </tbody>
 </table>
@@ -469,7 +469,7 @@ Name: satisfaction, dtype: float64</code></pre>
 <section id="usefulness" class="level3">
 <h3 class="anchored" data-anchor-id="usefulness">Usefulness</h3>
 <p>Usefulness measures the incremental contribution of each predictor to the R² value of the model. It helps in understanding how much additional variance in the dependent variable is explained by each predictor.</p>
-<div id="322288d8" class="cell" data-execution_count="5">
+<div id="063fa593" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Full model R-squared</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>full_r2 <span class="op">=</span> model.score(X_scaled, y)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -482,7 +482,7 @@ Name: satisfaction, dtype: float64</code></pre>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    usefulness.append(full_r2 <span class="op">-</span> temp_r2)</span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize the usefulness values</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>usefulness_normalized <span class="op">=</span> (np.array(usefulness) <span class="op">/</span> <span class="bu">sum</span>(usefulness)) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>usefulness_normalized <span class="op">=</span> np.array(usefulness) <span class="op">/</span> <span class="bu">sum</span>(usefulness)</span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create DataFrames for better visualization</span></span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>usefulness_df <span class="op">=</span> pd.DataFrame({</span>
@@ -508,47 +508,47 @@ Name: satisfaction, dtype: float64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
 <td>trust</td>
-<td>31.517391</td>
+<td>0.315174</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>build</td>
-<td>1.016743</td>
+<td>0.010167</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>differs</td>
-<td>2.104285</td>
+<td>0.021043</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>easy</td>
-<td>1.103478</td>
+<td>0.011035</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>appealing</td>
-<td>2.713117</td>
+<td>0.027131</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
 <td>rewarding</td>
-<td>0.060194</td>
+<td>0.000602</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">6</td>
 <td>popular</td>
-<td>0.780849</td>
+<td>0.007808</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">7</td>
 <td>service</td>
-<td>17.869775</td>
+<td>0.178698</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">8</td>
 <td>impact</td>
-<td>42.834168</td>
+<td>0.428342</td>
 </tr>
 </tbody>
 </table>
@@ -569,7 +569,7 @@ Name: satisfaction, dtype: float64</code></pre>
 <ul>
 <li><strong>SHAP Library</strong>: Uses the SHAP library to calculate Shapley values, which is efficient and well-optimized for various machine learning models.</li>
 </ul>
-<div id="3c82f655" class="cell" data-execution_count="6">
+<div id="c4afa93f" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shap</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Using the SHAP library's LinearExplainer for Shapley values approximation</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>explainer <span class="op">=</span> shap.LinearExplainer(model, X_scaled)</span>
@@ -577,7 +577,7 @@ Name: satisfaction, dtype: float64</code></pre>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean absolute Shapley values for each feature and normalize</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>mean_abs_shap_values <span class="op">=</span> np.mean(np.<span class="bu">abs</span>(shap_values), axis<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>normalized_shap_values <span class="op">=</span> (mean_abs_shap_values <span class="op">/</span> mean_abs_shap_values.<span class="bu">sum</span>()) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>normalized_shap_values <span class="op">=</span> mean_abs_shap_values <span class="op">/</span> mean_abs_shap_values.<span class="bu">sum</span>()</span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a DataFrame for better visualization</span></span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>shap_values_df <span class="op">=</span> pd.DataFrame({</span>
@@ -605,55 +605,55 @@ Name: satisfaction, dtype: float64</code></pre>
 <td data-quarto-table-cell-role="th">0</td>
 <td>trust</td>
 <td>0.136576</td>
-<td>26.694012</td>
+<td>0.266940</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>build</td>
 <td>0.023157</td>
-<td>4.526070</td>
+<td>0.045261</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>differs</td>
 <td>0.028857</td>
-<td>5.640139</td>
+<td>0.056401</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>easy</td>
 <td>0.025924</td>
-<td>5.066851</td>
+<td>0.050669</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>appealing</td>
 <td>0.039060</td>
-<td>7.634243</td>
+<td>0.076342</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
 <td>rewarding</td>
 <td>0.005861</td>
-<td>1.145452</td>
+<td>0.011455</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">6</td>
 <td>popular</td>
 <td>0.019465</td>
-<td>3.804387</td>
+<td>0.038044</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">7</td>
 <td>service</td>
 <td>0.102030</td>
-<td>19.941906</td>
+<td>0.199419</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">8</td>
 <td>impact</td>
 <td>0.130708</td>
-<td>25.546941</td>
+<td>0.255469</td>
 </tr>
 </tbody>
 </table>
@@ -665,7 +665,7 @@ Name: satisfaction, dtype: float64</code></pre>
 <ul>
 <li><strong>Manual Calculation</strong>: Implements a manual approach to calculate Shapley values by averaging over permutations, which provides a close approximation to the theoretical Shapley values.</li>
 </ul>
-<div id="b24e5377" class="cell" data-execution_count="7">
+<div id="ee36b96d" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> itertools</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> r2_score</span>
@@ -715,7 +715,7 @@ Name: satisfaction, dtype: float64</code></pre>
 <span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>shap_values_manual <span class="op">=</span> approximate_shapley_values_manual(X_matrix, y_vector)</span>
 <span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize the Shapley values to sum to 100%</span></span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>normalized_shap_values_manual <span class="op">=</span> (shap_values_manual <span class="op">/</span> shap_values_manual.<span class="bu">sum</span>()) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>normalized_shap_values_manual <span class="op">=</span> shap_values_manual <span class="op">/</span> shap_values_manual.<span class="bu">sum</span>()</span>
 <span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Map the Shapley values to the feature names and normalize to sum to 100%</span></span>
 <span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>shapley_values_manual_df <span class="op">=</span> pd.DataFrame({<span class="st">'Feature'</span>: X.columns, <span class="st">'Shapley Value'</span>: shap_values_manual, <span class="st">'Normalized Shapley Value'</span>: normalized_shap_values_manual})</span>
@@ -740,55 +740,55 @@ Name: satisfaction, dtype: float64</code></pre>
 <td data-quarto-table-cell-role="th">0</td>
 <td>trust</td>
 <td>0.021209</td>
-<td>19.547288</td>
+<td>0.195473</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>build</td>
 <td>0.006640</td>
-<td>6.119831</td>
+<td>0.061198</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>differs</td>
 <td>0.006930</td>
-<td>6.386692</td>
+<td>0.063867</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>easy</td>
 <td>0.009254</td>
-<td>8.528979</td>
+<td>0.085290</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>appealing</td>
 <td>0.009916</td>
-<td>9.139131</td>
+<td>0.091391</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
 <td>rewarding</td>
 <td>0.007342</td>
-<td>6.767128</td>
+<td>0.067671</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">6</td>
 <td>popular</td>
 <td>0.005680</td>
-<td>5.234813</td>
+<td>0.052348</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">7</td>
 <td>service</td>
 <td>0.017968</td>
-<td>16.560666</td>
+<td>0.165607</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">8</td>
 <td>impact</td>
 <td>0.023561</td>
-<td>21.715472</td>
+<td>0.217155</td>
 </tr>
 </tbody>
 </table>
@@ -805,7 +805,7 @@ Name: satisfaction, dtype: float64</code></pre>
 <section id="johnsons-relative-weights" class="level3">
 <h3 class="anchored" data-anchor-id="johnsons-relative-weights">Johnson’s Relative Weights</h3>
 <p>Johnson’s Relative Weights (also known as Johnson’s Epsilon) offer an approximation to Shapley values for linear regression by transforming the predictors into orthogonal components and assessing their contributions.</p>
-<div id="8589655d" class="cell" data-execution_count="8">
+<div id="9eac598f" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> relativeImp <span class="im">import</span> relativeImp</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify outcome variable</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>yName <span class="op">=</span> <span class="st">'satisfaction'</span>  </span>
@@ -898,7 +898,7 @@ Name: satisfaction, dtype: float64</code></pre>
 <section id="mean-decrease-in-gini-from-random-forest" class="level3">
 <h3 class="anchored" data-anchor-id="mean-decrease-in-gini-from-random-forest">Mean Decrease in Gini from Random Forest</h3>
 <p>The Mean Decrease in Gini measures the importance of each feature in reducing the Gini impurity across all trees in the forest. It is specific to tree-based models like Random Forest.</p>
-<div id="6161c290" class="cell" data-execution_count="9">
+<div id="9aae2541" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit a Random Forest model</span></span>
@@ -909,7 +909,7 @@ Name: satisfaction, dtype: float64</code></pre>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>rf_feature_importances <span class="op">=</span> rf_model.feature_importances_</span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize to sum to 100%</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>normalized_rf_feature_importances <span class="op">=</span> (rf_feature_importances <span class="op">/</span> rf_feature_importances.<span class="bu">sum</span>()) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>normalized_rf_feature_importances <span class="op">=</span> rf_feature_importances <span class="op">/</span> rf_feature_importances.<span class="bu">sum</span>()</span>
 <span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a DataFrame for better visualization</span></span>
 <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>rf_feature_importances_df <span class="op">=</span> pd.DataFrame({</span>
@@ -938,55 +938,55 @@ Name: satisfaction, dtype: float64</code></pre>
 <td data-quarto-table-cell-role="th">0</td>
 <td>trust</td>
 <td>0.155865</td>
-<td>15.586537</td>
+<td>0.155865</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>build</td>
 <td>0.102301</td>
-<td>10.230144</td>
+<td>0.102301</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>differs</td>
 <td>0.089897</td>
-<td>8.989693</td>
+<td>0.089897</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>easy</td>
 <td>0.099904</td>
-<td>9.990365</td>
+<td>0.099904</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>appealing</td>
 <td>0.085534</td>
-<td>8.553448</td>
+<td>0.085534</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
 <td>rewarding</td>
 <td>0.101057</td>
-<td>10.105692</td>
+<td>0.101057</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">6</td>
 <td>popular</td>
 <td>0.094944</td>
-<td>9.494376</td>
+<td>0.094944</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">7</td>
 <td>service</td>
 <td>0.129664</td>
-<td>12.966365</td>
+<td>0.129664</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">8</td>
 <td>impact</td>
 <td>0.140834</td>
-<td>14.083380</td>
+<td>0.140834</td>
 </tr>
 </tbody>
 </table>
@@ -1004,7 +1004,7 @@ Name: satisfaction, dtype: float64</code></pre>
 <section id="feature-importance-from-xgboost" class="level3">
 <h3 class="anchored" data-anchor-id="feature-importance-from-xgboost">Feature Importance from XGBoost</h3>
 <p>XGBoost provides feature importances based on various metrics like gain, weight, and cover. We use the gain metric, which measures the improvement in accuracy brought by a feature to the branches it is on.</p>
-<div id="3b3373b5" class="cell" data-execution_count="10">
+<div id="28433072" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xgboost <span class="im">as</span> xgb</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit an XGBoost model</span></span>
@@ -1019,7 +1019,7 @@ Name: satisfaction, dtype: float64</code></pre>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>xgb_importance_df <span class="op">=</span> pd.DataFrame(<span class="bu">list</span>(importance_dict.items()), columns<span class="op">=</span>[<span class="st">'Feature'</span>, <span class="st">'Importance'</span>])</span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize to sum to 100%</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>xgb_importance_df[<span class="st">'Normalized Importance'</span>] <span class="op">=</span> (xgb_importance_df[<span class="st">'Importance'</span>] <span class="op">/</span> xgb_importance_df[<span class="st">'Importance'</span>].<span class="bu">sum</span>()) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>xgb_importance_df[<span class="st">'Normalized Importance'</span>] <span class="op">=</span> xgb_importance_df[<span class="st">'Importance'</span>] <span class="op">/</span> xgb_importance_df[<span class="st">'Importance'</span>].<span class="bu">sum</span>()</span>
 <span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>xgb_importance_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
@@ -1041,55 +1041,55 @@ Name: satisfaction, dtype: float64</code></pre>
 <td data-quarto-table-cell-role="th">0</td>
 <td>trust</td>
 <td>0.726525</td>
-<td>28.986719</td>
+<td>0.289867</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>build</td>
 <td>0.197839</td>
-<td>7.893330</td>
+<td>0.078933</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>differs</td>
 <td>0.141373</td>
-<td>5.640452</td>
+<td>0.056405</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>easy</td>
 <td>0.179203</td>
-<td>7.149780</td>
+<td>0.071498</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>appealing</td>
 <td>0.164887</td>
-<td>6.578636</td>
+<td>0.065786</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
 <td>rewarding</td>
 <td>0.163910</td>
-<td>6.539633</td>
+<td>0.065396</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">6</td>
 <td>popular</td>
 <td>0.190827</td>
-<td>7.613552</td>
+<td>0.076136</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">7</td>
 <td>service</td>
 <td>0.279030</td>
-<td>11.132675</td>
+<td>0.111327</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">8</td>
 <td>impact</td>
 <td>0.462813</td>
-<td>18.465223</td>
+<td>0.184652</td>
 </tr>
 </tbody>
 </table>
@@ -1103,7 +1103,7 @@ Name: satisfaction, dtype: float64</code></pre>
 </section>
 <section id="combined-analysis-and-conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="combined-analysis-and-conclusion">Combined Analysis and Conclusion</h2>
-<div id="d0f0a3f5" class="cell" data-execution_count="11">
+<div id="b38d7a7a" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>final_results <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Feature'</span>: features,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Pearson Correlations'</span>: normalized_corr.values,</span>
@@ -1115,7 +1115,15 @@ Name: satisfaction, dtype: float64</code></pre>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'XGBoost Feature Importance'</span>: xgb_importance_df[<span class="st">'Normalized Importance'</span>]</span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>})</span>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>final_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function to format the values</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_percentage(value):</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>value<span class="sc">:.1f}</span><span class="ss">%"</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the formatting function to all relevant columns</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> final_results.columns[<span class="dv">1</span>:]:</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    final_results[col] <span class="op">=</span> final_results[col].<span class="bu">map</span>(format_percentage)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>final_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 <div>
@@ -1139,101 +1147,101 @@ Name: satisfaction, dtype: float64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
 <td>trust</td>
-<td>13.283356</td>
-<td>25.280109</td>
-<td>31.517391</td>
-<td>19.547288</td>
-<td>19.835524</td>
-<td>15.586537</td>
-<td>28.986719</td>
+<td>0.1%</td>
+<td>0.3%</td>
+<td>0.3%</td>
+<td>0.2%</td>
+<td>19.8%</td>
+<td>0.2%</td>
+<td>0.3%</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>build</td>
-<td>9.968574</td>
-<td>4.363461</td>
-<td>1.016743</td>
-<td>6.119831</td>
-<td>6.620792</td>
-<td>10.230144</td>
-<td>7.893330</td>
+<td>0.1%</td>
+<td>0.0%</td>
+<td>0.0%</td>
+<td>0.1%</td>
+<td>6.6%</td>
+<td>0.1%</td>
+<td>0.1%</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>differs</td>
-<td>9.600014</td>
-<td>6.081798</td>
-<td>2.104285</td>
-<td>6.386692</td>
-<td>6.966081</td>
-<td>8.989693</td>
-<td>5.640452</td>
+<td>0.1%</td>
+<td>0.1%</td>
+<td>0.0%</td>
+<td>0.1%</td>
+<td>7.0%</td>
+<td>0.1%</td>
+<td>0.1%</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>easy</td>
-<td>11.064100</td>
-<td>4.798205</td>
-<td>1.103478</td>
-<td>8.528979</td>
-<td>8.239683</td>
-<td>9.990365</td>
-<td>7.149780</td>
+<td>0.1%</td>
+<td>0.0%</td>
+<td>0.0%</td>
+<td>0.1%</td>
+<td>8.2%</td>
+<td>0.1%</td>
+<td>0.1%</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>appealing</td>
-<td>10.804975</td>
-<td>7.389479</td>
-<td>2.713117</td>
-<td>9.139131</td>
-<td>8.346395</td>
-<td>8.553448</td>
-<td>6.578636</td>
+<td>0.1%</td>
+<td>0.1%</td>
+<td>0.0%</td>
+<td>0.1%</td>
+<td>8.3%</td>
+<td>0.1%</td>
+<td>0.1%</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
 <td>rewarding</td>
-<td>10.107052</td>
-<td>1.106526</td>
-<td>0.060194</td>
-<td>6.767128</td>
-<td>5.997431</td>
-<td>10.105692</td>
-<td>6.539633</td>
+<td>0.1%</td>
+<td>0.0%</td>
+<td>0.0%</td>
+<td>0.1%</td>
+<td>6.0%</td>
+<td>0.1%</td>
+<td>0.1%</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">6</td>
 <td>popular</td>
-<td>8.905177</td>
-<td>3.628859</td>
-<td>0.780849</td>
-<td>5.234813</td>
-<td>5.392328</td>
-<td>9.494376</td>
-<td>7.613552</td>
+<td>0.1%</td>
+<td>0.0%</td>
+<td>0.0%</td>
+<td>0.1%</td>
+<td>5.4%</td>
+<td>0.1%</td>
+<td>0.1%</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">7</td>
 <td>service</td>
-<td>13.044017</td>
-<td>19.304269</td>
-<td>17.869775</td>
-<td>16.560666</td>
-<td>16.635164</td>
-<td>12.966365</td>
-<td>11.132675</td>
+<td>0.1%</td>
+<td>0.2%</td>
+<td>0.2%</td>
+<td>0.2%</td>
+<td>16.6%</td>
+<td>0.1%</td>
+<td>0.1%</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">8</td>
 <td>impact</td>
-<td>13.222734</td>
-<td>28.047294</td>
-<td>42.834168</td>
-<td>21.715472</td>
-<td>21.966601</td>
-<td>14.083380</td>
-<td>18.465223</td>
+<td>0.1%</td>
+<td>0.3%</td>
+<td>0.4%</td>
+<td>0.2%</td>
+<td>22.0%</td>
+<td>0.1%</td>
+<td>0.2%</td>
 </tr>
 </tbody>
 </table>
@@ -1247,9 +1255,9 @@ Name: satisfaction, dtype: float64</code></pre>
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>In this analysis, we explored various statistical methods to identify the key drivers of customer satisfaction in a payment card dataset. Each method provides unique insights into feature importance, helping us to understand which factors are most influential. By comparing these methods, we gain a comprehensive view of the factors driving customer satisfaction, enabling better decision-making and targeted improvements.</p>
 <ul>
-<li><strong>Trust</strong> consistently emerged as a significant driver across all metrics, indicating that building trust with customers is crucial for enhancing their satisfaction.</li>
-<li><strong>Impact</strong> was also highlighted as a key factor, suggesting that customers value the positive influence the payment card has on their lives.</li>
-<li><strong>Service</strong> and <strong>Ease of Use</strong> were important in several metrics, emphasizing the need for excellent customer service and user-friendly features.</li>
+<li><strong>trust</strong> consistently emerged as a significant driver across all metrics, indicating that building trust with customers is crucial for enhancing their satisfaction.</li>
+<li><strong>impact</strong> was also highlighted as a key factor, suggesting that customers value the positive influence the payment card has on their lives.</li>
+<li><strong>service</strong> and <strong>easy</strong> were important in several metrics, emphasizing the need for excellent customer service and user-friendly features.</li>
 </ul>
 <p>The combination of these methods provides a robust analysis, allowing us to cross-validate the importance of features and identify the most critical drivers of customer satisfaction. This multi-faceted approach can guide businesses in prioritizing areas for improvement and investment, ultimately leading to higher customer satisfaction and loyalty.</p>
 
