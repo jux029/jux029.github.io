@@ -98,7 +98,7 @@ model.fit(X_scaled, y)
 # Extract standardized regression coefficients (betas)
 standardized_coefficients = model.coef_
 
-normalized_coefficients = (np.abs(standardized_coefficients)/np.abs(standardized_coefficients).sum()) * 100
+normalized_coefficients = np.abs(standardized_coefficients)/np.abs(standardized_coefficients).sum()
 
 # Create a DataFrame for better visualization
 coefficients_df = pd.DataFrame({
@@ -129,7 +129,7 @@ for feature in range(X_scaled.shape[1]):
     usefulness.append(full_r2 - temp_r2)
 
 # Normalize the usefulness values
-usefulness_normalized = (np.array(usefulness) / sum(usefulness)) * 100
+usefulness_normalized = np.array(usefulness) / sum(usefulness)
 
 # Create DataFrames for better visualization
 usefulness_df = pd.DataFrame({
@@ -155,8 +155,8 @@ explainer = shap.LinearExplainer(model, X_scaled)
 shap_values = explainer.shap_values(X_scaled)
 
 # Calculate mean absolute Shapley values for each feature and normalize
-mean_abs_shap_values = (np.mean(np.abs(shap_values), axis=0)) * 100 
-normalized_shap_values = (mean_abs_shap_values / mean_abs_shap_values.sum()) * 100
+mean_abs_shap_values = np.mean(np.abs(shap_values), axis=0)
+normalized_shap_values = mean_abs_shap_values / mean_abs_shap_values.sum()
 
 # Create a DataFrame for better visualization
 shap_values_df = pd.DataFrame({
@@ -219,7 +219,7 @@ def approximate_shapley_values_manual(X, y, n_samples=1000):
 shap_values_manual = approximate_shapley_values_manual(X_matrix, y_vector)
 
 # Normalize the Shapley values to sum to 100%
-normalized_shap_values_manual = (shap_values_manual / shap_values_manual.sum()) * 100 
+normalized_shap_values_manual = shap_values_manual / shap_values_manual.sum()
 
 # Map the Shapley values to the feature names and normalize to sum to 100%
 shapley_values_manual_df = pd.DataFrame({'Feature': X.columns, 'Shapley Value': shap_values_manual, 'Normalized Shapley Value': normalized_shap_values_manual})
@@ -261,7 +261,7 @@ rf_model.fit(X, y)
 rf_feature_importances = rf_model.feature_importances_
 
 # Normalize to sum to 100%
-normalized_rf_feature_importances = (rf_feature_importances / rf_feature_importances.sum()) * 100
+normalized_rf_feature_importances = rf_feature_importances / rf_feature_importances.sum()
 
 # Create a DataFrame for better visualization
 rf_feature_importances_df = pd.DataFrame({
@@ -295,7 +295,7 @@ importance_dict = booster.get_score(importance_type='gain')
 xgb_importance_df = pd.DataFrame(list(importance_dict.items()), columns=['Feature', 'Importance'])
 
 # Normalize to sum to 100%
-xgb_importance_df['Normalized Importance'] = (xgb_importance_df['Importance'] / xgb_importance_df['Importance'].sum()) * 100
+xgb_importance_df['Normalized Importance'] = xgb_importance_df['Importance'] / xgb_importance_df['Importance'].sum()
 
 xgb_importance_df
 ```
@@ -308,13 +308,13 @@ Features with higher gain contribute more to improving the model’s accuracy.
 ```{python}
 final_results = pd.DataFrame({
     'Feature': features,
-    'Pearson Correlations': normalized_corr.values,
-    'Standardized Regression Coefficient': normalized_coefficients,
-    'Usefulness': usefulness_normalized,
-    'Shapley Values': normalized_shap_values_manual,
+    'Pearson Correlations': normalized_corr.values * 100,
+    'Standardized Regression Coefficient': normalized_coefficients * 100,
+    'Usefulness': usefulness_normalized * 100,
+    'Shapley Values': normalized_shap_values_manual * 100,
     'Johnson\'s Weights': relative_weights['normRelaImpt'].values,
-    'Mean Decrease in RF Gini Coefficient': normalized_rf_feature_importances, 
-    'XGBoost Feature Importance': xgb_importance_df['Normalized Importance']
+    'Mean Decrease in RF Gini Coefficient': normalized_rf_feature_importances * 100, 
+    'XGBoost Feature Importance': xgb_importance_df['Normalized Importance'] * 100
 })
 
 # Define a function to format the values
