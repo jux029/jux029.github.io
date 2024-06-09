@@ -300,6 +300,7 @@ xgb_importance_df['Normalized Importance'] = xgb_importance_df['Importance'] / x
 xgb_importance_df
 ```
 Features with higher gain contribute more to improving the model’s accuracy.
+
 * **trust** stands out as the most important feature, with a high gain value. 
 * **impact** and **service** are also significant contributors.
 
